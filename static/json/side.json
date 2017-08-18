@@ -1,0 +1,126 @@
+ {
+     "sideList": [
+        {
+          "title": "主页",
+          "path": "/",
+          "icon": "icon-home",
+          "state":"启用"
+        },
+        {
+          "title": "用户管理",
+          "path": "/userManagement",
+          "icon": "icon-yonghuguanli",
+          "state":"启用"
+        },
+        {
+          "title": "商品管理",
+          "path": "/goodsManagement",
+          "icon": "icon-shangpinguanli",
+          "state":"启用",
+          "child": [
+
+            {
+              "title": "商品列表",
+              "icon": "icon",
+              "state":"启用",
+              "path": "/goodsManagement"
+            }, {
+              "title": "添加商品",
+              "icon": "icon",
+              "state":"启用",
+              "path": "/goodsManagement/add"
+            }]
+        },
+        {
+          "title": "活动管理",
+          "path": "/activityManagement",
+          "icon": "icon-huodongguanli",
+          "state":"启用",
+          "child": [
+
+            {
+              "title": "首页幻灯片列表",
+              "icon": "icon-shangpinguanli",
+              "state":"启用",
+              "path": "/activityManagement"
+            }, {
+              "title": "添加首页幻灯片",
+              "icon": "icon-daizhifu",
+              "state":"启用",
+              "path": "/activityManagement/add"
+            }]
+        },
+        {
+          "title": "订单管理",
+          "path": "/orderManagement",
+          "icon": "icon-caidantubiao-07",
+          "state":"启用",
+          "child": [
+            {
+              "title": "订单列表",
+              "icon": "icon-daizhifu",
+              "state":"启用",
+              "path": "/orderManagement"
+            },
+            {
+              "title": "批量发货",
+              "icon": "icon-daizhifu",
+              "state":"启用",
+              "path": "/orderManagement/delivery"
+            },
+            {
+              "title": "退货/退款",
+              "path": "/orderManagement/return",
+               "state":"启用",
+              "icon": "icon-ccgl-tuihuoyugao-1"
+            }
+          ]
+        },
+        {
+          "title": "角色管理",
+          "path": "/roleManagement/role",
+          "icon": "icon-quanxianguanli",
+           "state":"启用",
+          "child": [{
+            "title": "权限列表",
+             "state":"启用",
+            "path": "/privilegeManagement/list"
+          },{
+            "title": "角色列表",
+             "state":"启用",
+            "path": "/rolegeManagement/list"
+          },
+          {
+            "title": "添加角色",
+             "state":"启用",
+            "path": "/rolegeManagement/add"
+          }]
+        },
+        {
+          "title": "管理员管理",
+           "state":"启用",
+          "icon": "icon-quanxianguanli",
+          "child": [{
+            "title": "管理员列表",
+             "state":"启用",
+            "path": "/admin/list"
+          },
+          {
+            "title": "添加管理员",
+             "state":"启用",
+            "path": "/admin/add"
+          },
+          {
+            "title": "更改密码",
+             "state":"启用",
+            "path": "/admin/changePwd"
+          }]
+        },
+         {
+          "title": "日志管理",
+           "state":"启用",
+          "path": "/logManagement",
+          "icon": "icon-yonghuguanli"
+        }
+      ]
+    }

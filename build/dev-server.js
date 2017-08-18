@@ -20,24 +20,127 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 // https://github.com/chimurai/http-proxy-middleware
 var proxyTable = config.dev.proxyTable
 
-// var app = express()
+var app = express()
 // /* datura接口 */
-// var appData = require('../users.json')  /* 引入根目录下users.json数据文件 */
-// var users = appData.users 
+// var appData = require('../static/json/user.json')  /* 引入根目录下db.json数据文件 */
+// var goodsData = require('../static/json/goods.json')
+// var actData = require('../static/json/act.json')
+// var orderData = require('../static/json/order.json')
+// var sideData = require('../static/json/side.json')
+// var authData = require('../static/json/auth.json')
+// var logData = require('../static/json/log.json')
+// var sideList = sideData.sideList
+// var userSearchList = appData.userSearchList
+// var userTableHead=appData.userTableHead
+// var goodsSearchList = goodsData.goodsSearchList
+// var goodsTableHead = goodsData.goodsTableHead
+// var goodsAddList = goodsData.goodsAddList
+// var actTableHead = actData.actTableHead
+// var actAddList =actData.actAddList
+// var orderSearchList = orderData.orderSearchList
+// var orderTableHead = orderData.orderTableHead
+// var navList=orderData.navList
+// var navReturnList = orderData.navReturnList
+// var roleTableHead =authData.roleTableHead
+// var roleAddList =authData.roleAddList
+// var adminTableHead = authData.adminTableHead
+// var adminAddList = authData.adminAddList
+// var logTableHead = logData.logTableHead
 // var apiRoutes = express.Router()  /* 定义express.Router() 对象 */
-// apiRoutes.get('/users', function(req, res){   /* 定义接口并返回数据 */
+// apiRoutes.get('/sideList', function(req, res){   /* 定义接口并返回数据 */
 //   res.json({
-//     data: users
+//     data: sideList
 //   })
 // })
-// app.use('/api', apiRoutes)  /* 定义接口在/api目录下，方便管理 */
+// apiRoutes.get('/userSearchList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: userSearchList
+//   })
+// })
+// apiRoutes.get('/userTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: userTableHead
+//   })
+// })
+// apiRoutes.get('/goodsSearchList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: goodsSearchList
+//   })
+// })
+// apiRoutes.get('/goodsTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: goodsTableHead
+//   })
+// })
+// apiRoutes.get('/goodsAddList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: goodsAddList
+//   })
+// })
+// apiRoutes.get('/actTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: actTableHead
+//   })
+// })
+// apiRoutes.get('/actAddList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: actAddList
+//   })
+// })
+// apiRoutes.get('/orderSearchList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: orderSearchList
+//   })
+// })
+// apiRoutes.get('/orderTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: orderTableHead
+//   })
+// })
+// apiRoutes.get('/navList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: navList
+//   })
+// })
+// apiRoutes.get('/navReturnList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: navReturnList
+//   })
+// })
+// apiRoutes.get('/roleTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: roleTableHead
+//   })
+// })
+// apiRoutes.get('/roleAddList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: roleAddList
+//   })
+// })
+// apiRoutes.get('/adminTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: adminTableHead
+//   })
+// })
+// apiRoutes.get('/adminAddList', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: adminAddList
+//   })
+// })
+// apiRoutes.get('/logTableHead', function(req, res){   /* 定义接口并返回数据 */
+//   res.json({
+//     data: adminAddList
+//   })
+// })
+// app.use('/api', apiRoutes)  
+/* 定义接口在/api目录下，方便管理 */
 /* datura接口 _end */
 // mock数据
-var app = express()
+// var app = express()
 // var appData = require('../data.json')
 // var user = appData.user;//接口
 // API
-var apiRouter = express.Router();
+// var apiRouter = express.Router();
 
 var compiler = webpack(webpackConfig)
 

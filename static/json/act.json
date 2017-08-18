@@ -1,0 +1,70 @@
+{
+    
+        "actTableHead": [
+
+       
+        {
+          "name": "img",
+          "label": "活动图片",
+          "width": "200",
+          "type": "img"
+       },
+        {
+          "name": "aname",
+          "label": "活动名称",
+          "width": "",
+          "type": ""
+        },
+        {
+          "name": "atime",
+          "label": "活动时间",
+          "width": "100",
+          "type": ""
+        },
+        {
+          "name": "aurl",
+          "label": "活动链接",
+          "width": "100",
+          "type": ""
+        },
+          {
+          "name": "astate",
+          "label": "活动状态",
+          "width": "100",
+          "type": "switch"
+        }
+        ],
+      "actAddList": [
+        {
+          "label": "活动图片",
+          "val": "",
+          "type": "img",
+          "url": "http://p4.so.qhimgs1.com/bdr/_240_/t01330198da525d03ea.jpg"
+        },
+        {
+          "label": "活动名称",
+           "val": "",
+          "type": "input",
+          "title": "请输入活动名称"
+        },
+         {
+          "label": "活动时间",
+           "val": "",
+          "type": "time",
+          "title": "请选择时间"
+        },
+        {
+          "label": "活动链接",
+           "val": "",
+          "type": "input",
+          "title": "请输入活动链接"
+        },
+       
+       {
+          "label": "活动状态",
+          "val": "true",
+          "type": "switch",
+          "title": "请选择状态"
+        }
+      ]
+}

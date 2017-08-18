@@ -3,36 +3,28 @@
     <div class="user-detail">
     
       
-        <el-table :data="tableData5" style="width: 100%" class="table">
-            <el-table-column>
+        <el-table :data="tableData" style="width: 100%" class="table">
+            <el-table-column v-for="(item, index) in tableData" :key="index" >
                 <template scope="props">
                     <el-form label-position="left" class="demo-table-expand intable">
-                        <el-form-item label="头像">
-                            <img :src='props.row.img' class="user-img">
+                        <el-form-item :label="item.label">
+                            <div v-if="item.type=='img'">
+                                    <img :src='item.url' class="good-img">
+                                    <input type="file" id="file" v-on:change="mychange()" accept="image/*" multiple="">
+                            </div>
+                            <!--<img :src='props.row.img' class="user-img">-->
+                            <span v-else>{{ item.val }}</span>
                         </el-form-item>
-                        <el-form-item label="姓名">
-                            <span>{{ props.row.name }}</span>
-                        </el-form-item>
-                        <el-form-item label="年龄">
-                            <span>{{ props.row.age }}</span>
-                        </el-form-item>
-                         <el-form-item label="手机号">
-                            <span>{{ props.row.phone }}</span>
-                        </el-form-item>
-                        <el-form-item label="地址">
-                            <span>{{ props.row.address }}</span>
-                        </el-form-item>
-    
                     </el-form>
                 </template>
             </el-table-column>
-    
         </el-table>
     </div>
 </template>
 
 
 <script>
+
 export default {
     data() {
         return {

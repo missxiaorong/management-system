@@ -54,5 +54,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  //  plugins: [ 
+  //    new webpack.BannerPlugin("Copyright keessi")
+  //  ], 
 }

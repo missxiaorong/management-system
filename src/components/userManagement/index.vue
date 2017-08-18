@@ -1,34 +1,35 @@
     <template>
-    <div class="e-table">
-      <v-search></v-search>
-      <v-table></v-table>
-      <v-paging></v-paging>
-      <router-view></router-view>
-
-    </div>
-  </template>
-
-      <script>
-  import vSearch from './search.vue';
-  import vPaging from './paging.vue';
-  import vTable from './table.vue'
-  export default {
-    name: 'app',
-    components: {
-      vSearch,
-      vTable,
-      vPaging
+  <div class="e-table">
+    <!-- -->
+    <v-table :sign="sign"></v-table>
+    <v-paging></v-paging>
+    <router-view></router-view>
+  
+  </div>
+</template>
+<script>
+import vSearch from '../common/search.vue';
+import vPaging from '../common/paging.vue';
+import vTable from '../common/table.vue'
+import { mapActions, mapGetters } from 'vuex'
+export default {
+  components: {
+    vSearch,
+    vTable,
+    vPaging
+  },
+  data() {
+    return {
+      sign:'user'
     }
-  }
-  </script>
+  },
 
-      <style>
-  .e-table {
-    width: 85%;
-    float: right;
-    margin-top: 60px;
-  }
-  .el-input__inner {
-    float: right;
-  }
-  </style>
+  
+   
+
+}
+</script>
+
+<style>
+
+</style>

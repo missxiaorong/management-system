@@ -5,6 +5,14 @@
 </template>
 
 
+<<script>
+　import store from './store/store'
+    export default {
+        store: store,
+    
+    }
+
+</script>
 
 <style>
 #app {

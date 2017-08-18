@@ -22,6 +22,8 @@
     padding-right: 30px;
     /*height: 100%;*/
   }
+
+
   /*.header-operations li {
     color: #fff;
     display: inline-block;
@@ -90,6 +92,38 @@
 }*/
  
 
+  .e-table {
+    width: 85%;
+    float: right;
+    margin-top: 60px;
+  }
+  .el-input__inner {
+    float: right;
+  }
 
 
- 
+ .help-inline{
+    display: inline-block;
+    vertical-align: middle;  
+    color: #555;
+    margin-left: 5px;
+    margin-top: -30px;
+}
+.table-image {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+}
+.intable.el-form-item__label {
+    width: 150px;
+    background-color: green!important;
+    color:red;
+    height:50px;
+    
+}
+
+.sub-label label.el-form-item__label{
+  width: 110px;
+  
+    height:50px;
+}

@@ -1,16 +1,17 @@
 <template>
   <div>
-     <el-button type="success" class="btn"> <i class="el-icon-plus add"></i>增加</el-button>
+    
     <!--表格-->
-    <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="img" label="活动图片" width="180">
+    <el-table :data="activityData" border style="width: 100%">
+      <el-table-column prop="img" label="幻灯片图片" width="180">
         <template scope="scope">
           <img :src='scope.row.img' class="activity-img">
         </template>
       </el-table-column>
-      <el-table-column prop="tname" label="活动名称" width="300">
+      <el-table-column prop="tname" label="幻灯片标题  " width="300">
       </el-table-column>
-      <el-table-column prop="ttime" label="活动时间" width="200">
+  
+       <el-table-column prop="ttime" label="添加时间" width="200">
       </el-table-column>
       <el-table-column label="操作" >
         <template scope="scope">
@@ -28,34 +29,28 @@
 </template>
 
 <script>
-const ERR_OK = "000";
+import { mapActions, mapGetters } from 'vuex'
 export default {
   data() {
     return {
-
-      formInline: {
-        goods: {
-          img: '',
-          tname: '',
-         ttime: '',
-         
-        }
-      },
-      tableData: [],
+      formInline: {}
     };
   },
-  created() {
-    this.$http.get('/api/getActivity').then((response) => {
-      response = response.data;
-      if (response.code === ERR_OK) {
-        this.tableData = response.datas;
-      }
-    });
+ created() {
+    this.getActivityList()
+  },
+  computed: {
+    ...mapGetters([
+      'activityData'
+    ])
   },
 
   methods: {
-    handleCheck(index, row) {
-      console.log(index, row);
+    ...mapActions([
+      'getActivityList'
+    ]),
+    handleEdit(index, row) {
+      this.$router.push({ path: '/ActivityManagement/edit'})
     },
     handleDelete() {
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {

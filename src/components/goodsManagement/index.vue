@@ -1,30 +1,31 @@
     <template>
     <div class="e-table">
-      <v-table></v-table>
+  
+      <v-table  :sign="sign"></v-table>
       <v-paging></v-paging>
       <router-view></router-view>
     </div>
   </template>
 
-      <script>
-  import vPaging from './paging.vue';
-  import vTable from './table.vue'
+  <script>
+  import { mapActions, mapGetters } from 'vuex'
+  import vSearch from '../common/search.vue'
+  import vPaging from '../common/paging.vue';
+ import vTable from '../common/table.vue'
   export default {
-    name: 'app',
     components: {
+      vSearch,
       vTable,
       vPaging
-    }
+    },
+    data(){
+      return{
+        sign:'goods'
+      }
+    },
   }
+   
   </script>
 
-      <style>
-  .e-table {
-    width: 85%;
-    float: right;
-    margin-top: 60px;
-  }
-  .el-input__inner {
-    float: right;
-  }
+  <style>
   </style>

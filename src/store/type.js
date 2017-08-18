@@ -1,0 +1,6 @@
+
+
+export const SET_SEARCH_LIST = 'SET_SEARCH_LIST'
+export const SET_TABLE_HEAD = 'SET_TABLE_HEAD'
+export const SET_TABLE_LIST = 'SET_TABLE_LIST'
+export const SET_ADD_LIST = 'SET_ADD_LIST'

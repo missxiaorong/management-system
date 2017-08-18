@@ -35,6 +35,53 @@
           "name": "王小虎",
           "address": "上海市普陀区金沙江路 1518 弄"
         }
+        ],
+
+        "userSearchList": [
+        {
+          "label": "姓名",
+          "name": "name",
+          "type": "input"
+        },
+        {
+          "label": "手机号",
+          "name": "phone",
+          "type": "input"
+        },
+        {
+          "label": "地址",
+          "name":"address",
+          "type": "input"
+        }
+        ],
+        "userTableHead": [
+
+       
+        {
+          "name": "img",
+          "label": "头像",
+          "width": "100",
+          "type": "img"
+       },
+        {
+          "name": "name",
+          "label": "姓名",
+          "width": "100",
+          "type": ""
+        },
+        {
+          "name": "phone",
+          "label": "手机号",
+          "width": "100",
+          "type": ""
+        },
+        {
+          "name": "address",
+          "label": "地址",
+          "width": "250",
+          "type": ""
+        }
         ]
-     
+       
+      
 }

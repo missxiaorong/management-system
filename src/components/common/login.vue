@@ -21,6 +21,8 @@
   </div>
 </template>
 <script>
+import store from '../../store/store'
+import md5 from 'js-md5';
 export default {
   data() {
     return {
@@ -47,33 +49,49 @@ export default {
 
     //提交
     handleSubmit(form) {
-      if (this.loading) return
+      // if (this.loading) return
+
       this.$refs.form.validate((valid) => {
         if (valid) {
-          this.loading = !this.loading
-          let username = this.form.username
-          let password = this.form.password
-          if (username == 'admin' && password == 'admin') {
-            this.$message({
-              message: '欢迎成功登录奇思广议后台管理系统!'
-            });
-            this.$router.push('/')
-          }
-          else {
-            this.$notify.info({
-              title: '温馨提示',
-              message: '账号和密码都为：admin'
-            })
-            this.loading = !this.loading
-          }
+          this.loading = !this.loading;
+          let loginParam = {
+                "user_name": this.form.username,
+                "user_pass": md5(this.form.password),
+            }
+            console.log(loginParam);
+          this.$store.dispatch('userLogin',loginParam)
+
         }
-      })
-    }
+        else{
+             this.$notify.info({
+              title: '登录失败',
+              message: response.data.message
+            })
+            // this.loading = !this.loading
+          }
 
-
+            })
+           }
   }
 }
 
+ function set(key,value){
+        var curTime = new Date().getTime();
+        localStorage.setItem(key,JSON.stringify({data:value,time:curTime}));
+    }
+    function get(key,exp){
+        var data = localStorage.getItem(key);
+        var dataObj = JSON.parse(data);
+        if (new Date().getTime() - dataObj.time>exp) {
+            console.log('信息已过期');
+            //alert("信息已过期")
+        }else{
+            //console.log("data="+dataObj.data);
+            //console.log(JSON.parse(dataObj.data));
+            var dataObjDatatoJson = JSON.parse(dataObj.data)
+            return dataObjDatatoJson;
+        }
+    }
 
 </script>
 <style>

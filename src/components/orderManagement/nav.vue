@@ -1,40 +1,43 @@
 
 <template>
-
-<el-menu   theme="dark":default-active="activeIndex2" class="nav-menu" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1">全部</el-menu-item>
-   <el-menu-item index="2">未支付</el-menu-item>
-  <el-menu-item index="3">待发货</el-menu-item>
-    <el-menu-item index="4">待收货</el-menu-item>
-      <el-menu-item index="5">交易成功</el-menu-item>
-       <el-menu-item index="6">交易取消</el-menu-item>
-</el-menu>
-
+  <el-menu theme="dark" class="nav-menu" mode="horizontal" router :default-active="$route.path">
+    <el-menu-item :index="item.path" v-for="(item, index) in nav_data" :key="index">{{item.title}}</el-menu-item>
+  </el-menu>
 </template>
 
 
 <script>
-  export default {
-    data() {
-      return {
-        activeIndex: '1',
-        activeIndex2: '1'
-      };
+export default {
+   props: {
+        navList:''
+    },
+  data() {
+    return {
+     nav_data:[]
+    }
+  },
+    created() {
+        this.getList()
     },
     methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        getNav() {
+            var nav_url = api.getUrl(this.navList)
+            this.$http.get(add_url).then((res) => {
+                res = res.data;
+                this.nav_data = res.data;
+            })
+        },
       }
-    }
-  }
+}
 </script>
 <style scoped>
-.nav-menu{
-    width: 100%;
+.nav-menu {
+  width: 100%;
 }
-.el-menu-item{
-    margin:0;
-    width: 10%;
-    text-align: center;
+
+.el-menu-item {
+  margin: 0;
+  width: 10%;
+  text-align: center;
 }
 </style>
